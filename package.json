@@ -1,5 +1,5 @@
 {
-  "name": "react-parcel-template",
+  "name": "evens-or-odds",
   "version": "1.0.0",
   "description": "React template using parcel-bundler",
   "main": "index.js",
@@ -17,17 +17,19 @@
     "live-server": "^1.2.1",
     "parcel-bundler": "^1.11.0",
     "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react-dom": "^16.7.0",
+    "react-redux": "^6.0.0",
+    "redux": "^4.0.1"
   },
   "devDependencies": {
     "prettier": "^1.16.1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/stanlouis/react-parcel-template.git"
+    "url": "https://github.com/stanlouis/evens-or-odds.git"
   },
   "bugs": {
-    "url": "https://github.com/stanlouis/react-parcel-template/issues"
+    "url": "https://github.com/stanlouis/evens-or-odds.git/issues"
   },
-  "homepage": "https://github.com/stanlouis/react-parcel-template#readme"
+  "homepage": "https://github.com/stanlouis/evens-or-odds.git#readme"
 }

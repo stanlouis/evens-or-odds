@@ -1,0 +1,33 @@
+{
+  "name": "react-parcel-template",
+  "version": "1.0.0",
+  "description": "React template using parcel-bundler",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.html",
+    "build": "parcel build src/index.html",
+    "start": "npm run build && live-server dist"
+  },
+  "keywords": [],
+  "author": "Stanley Louis",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-proposal-class-properties": "^7.3.0",
+    "live-server": "^1.2.1",
+    "parcel-bundler": "^1.11.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.16.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stanlouis/react-parcel-template.git"
+  },
+  "bugs": {
+    "url": "https://github.com/stanlouis/react-parcel-template/issues"
+  },
+  "homepage": "https://github.com/stanlouis/react-parcel-template#readme"
+}

@@ -9,13 +9,13 @@ const rootReducer = (state = DEFAULT_SETTINGS, action) => {
   switch (action.type) {
     case SET_GAME_STARTED:
       return {
-        gameStarted: action.gameStarted,
         ...state,
+        gameStarted: action.gameStarted,
       };
     case SET_INSTRUCTIONS_EXPENDED:
       return {
         ...state,
-        gameStarted: action.gameStarted,
+        instructionsExpanded: action.instructionsExpanded,
       };
     default:
       return state;

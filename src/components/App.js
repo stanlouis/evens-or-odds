@@ -5,9 +5,8 @@ import { cancelGame } from '../actions/settings';
 import Instructions from './Instructions';
 class App extends Component {
   render() {
-    console.log('this', this.props);
     return (
-      <div>
+      <div className="container">
         <h2 className="my-5">♡ ♤ Evens or Odds ♢ ♧</h2>
         {this.props.gameStarted ? (
           <div>
@@ -19,7 +18,6 @@ class App extends Component {
             >
               <i className="fas fa-stop" /> End Game
             </button>
-            <Instructions />
           </div>
         ) : (
           <div>
@@ -31,6 +29,8 @@ class App extends Component {
             >
               <i className="fas fa-play" /> Start Game
             </button>
+            <hr />
+            <Instructions />
           </div>
         )}
       </div>
@@ -38,20 +38,16 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  console.log('state', state);
-  return { gameStarted: state.gameStarted };
-};
+const mapStateToProps = state => ({
+  gameStarted: state.gameStarted,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    startGame: () => dispatch(startGame()),
-    cancelGame: () => dispatch(cancelGame()),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  startGame: () => dispatch(startGame()),
+  cancelGame: () => dispatch(cancelGame()),
+});
 
-const componentConnector = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-);
-export default componentConnector(App);
+)(App);

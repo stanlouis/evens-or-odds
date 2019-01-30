@@ -2,10 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { expandInstructions, collapseInstructions } from '../actions/settings';
 
-const Instructions = props => {
+const Instructions = ({
+  instructionsExpanded,
+  collapseInstructions,
+  expandInstructions,
+}) => {
   return (
     <div>
-      {props.instructionsExpanded ? (
+      {instructionsExpanded ? (
         <div>
           <h3>Instructions</h3>
           <p>Welcome to evens or odds. The game goes like this</p>
@@ -17,7 +21,7 @@ const Instructions = props => {
           <p>(Face cards don't count)</p>
 
           <button
-            onClick={props.collapseInstructions}
+            onClick={collapseInstructions}
             className="btn btn-outline-primary"
           >
             <i className="fas fa-angle-double-up" /> Show less
@@ -28,7 +32,7 @@ const Instructions = props => {
           <h3>Instructions</h3>
           <p>Welcome to evens or odds. The game goes like this...</p>
           <button
-            onClick={props.expandInstructions}
+            onClick={expandInstructions}
             className="btn btn-outline-primary"
           >
             <i className="fas fa-angle-double-down" /> Read more
@@ -39,20 +43,25 @@ const Instructions = props => {
   );
 };
 
-const mapStateToProps = state => {
-  return { instructionsExpanded: state.instructionsExpanded };
-};
+// Expanded form
+/**** 
+const mapStateToProps = state => ({
+  instructionsExpanded: state.instructionsExpanded,
+});
 
-const mapDispatchToProps = dispatch => {
-  return {
-    expandInstructions: () => dispatch(expandInstructions()),
-    collapseInstructions: () => dispatch(collapseInstructions()),
-  };
-};
+const mapDispatchToProps = dispatch => ({
+  expandInstructions: () => dispatch(expandInstructions()),
+  collapseInstructions: () => dispatch(collapseInstructions()),
+});
 
-const componentConnector = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
-);
+)(Instructions);
+****/
 
-export default componentConnector(Instructions);
+//Concise form
+export default connect(
+  state => ({ instructionsExpanded: state.instructionsExpanded }),
+  { expandInstructions, collapseInstructions }
+)(Instructions);

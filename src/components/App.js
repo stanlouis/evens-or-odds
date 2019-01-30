@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { startGame } from '../actions/settings';
 import { cancelGame } from '../actions/settings';
+import Instructions from './Instructions';
 class App extends Component {
   render() {
     console.log('this', this.props);
@@ -18,6 +19,7 @@ class App extends Component {
             >
               <i className="fas fa-stop" /> End Game
             </button>
+            <Instructions />
           </div>
         ) : (
           <div>

@@ -10,6 +10,7 @@ const DEFAULT_DECK = {
 };
 
 const deckReducer = (state = DEFAULT_DECK, action) => {
+  // let instead of const facilitate destructuring (remaining is reassigned)
   let remaining, deck_id, cards;
   switch (action.type) {
     case DECK.FETCH_SUCCESS:

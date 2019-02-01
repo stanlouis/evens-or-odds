@@ -2,7 +2,7 @@ import { SET_GUESS } from './types';
 
 export const setGuessEven = () => ({
   type: SET_GUESS,
-  guess: 'event',
+  guess: 'even',
 });
 
 export const setGuessOdd = () => ({
